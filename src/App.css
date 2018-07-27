@@ -8,6 +8,7 @@
   left: 0;
   right: 0;
   margin: auto;
+  z-index: -1;
 }
 
 .turntable {
@@ -18,6 +19,7 @@
     margin-top: 5px;
     margin-left: 15px;
     position: absolute;
+    cursor: pointer;
 }
 
 .weight {
@@ -46,6 +48,8 @@
     margin-top: 15px;
     margin-left: 300px;
     overflow: hidden;
+    cursor: pointer;
+
 }
 
 .start-stop {
