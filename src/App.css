@@ -3,59 +3,62 @@
   width: 453px;
   border: 1px solid black;
   position: absolute;
-  top:0;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
-  z-index: -1;
 }
 
-.turntable {
-    border: 1px solid black;
-    width: 340px;
-    height: 340px;
-    border-radius: 50%;
-    margin-top: 5px;
-    margin-left: 15px;
-    position: absolute;
-    cursor: pointer;
+.interface {
+  margin-top: 5px;
+  margin-left: 15px;
+  position: absolute;
 }
+
+
 
 .weight {
-    border: 1px solid black;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    position: absolute;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
 }
 
-.on-off {
-    border: 1px solid black;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    position: absolute;
-    margin-top: 265px;
+.power {
+  border: 1px solid black;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 265px;
 }
 
-.tone-arm-circle {
-    border: 1px solid black;
-    width: 115px;
-    height: 115px;
-    border-radius: 50%;
-    position: absolute;
-    margin-top: 15px;
-    margin-left: 300px;
-    overflow: hidden;
-    cursor: pointer;
-
+.tonearm-holder {
+  border: 1px solid black;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 15px;
+  margin-left: 300px;
+  overflow: hidden;
 }
 
 .start-stop {
-    height: 30px;
-    width: 45px;
-    border: 1px solid black;
-    position: absolute;
-    margin-top: 310px;
+  height: 30px;
+  width: 45px;
+  border: 1px solid black;
+  position: absolute;
+  margin-top: 310px;
+}
+
+.pitch-adjust {
+  height: 130px;
+  width: 28px;
+  border: 1px solid black;
+  position: absolute;
+  margin-top: 180px;
+  margin-left: 385px;
 }

@@ -1,0 +1,30 @@
+.platter {
+    border: 1px solid black;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    position: absolute;
+    animation: spin 1s infinite linear;
+  }
+  
+  .spindle {
+    border: 1px solid black;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
