@@ -1,8 +1,14 @@
 .power {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 25px;
   height: 25px;
   border-radius: 50%;
   position: absolute;
   margin-top: 265px;
+  background: gray;
+}
+
+.power-on {
+  border-color: red;
+  box-shadow: 0 0 20px red;
 }

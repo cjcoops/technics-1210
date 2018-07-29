@@ -34,7 +34,7 @@ class App extends Component {
       <div className="technics">
         <div className="interface">
           <div className="tonearm-holder" />
-          <Platter />
+          <Platter paused={!this.state.startButtonDepressed} />
           <div className="weight" />
           <StartStop
             depressed={this.state.startButtonDepressed}
