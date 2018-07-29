@@ -1,26 +1,31 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Platter, Power } from "./components";
+import { Platter, Power, StartStop } from "./components";
 
-document.onclick = function(evt) {
-  if (!evt.target) evt.target = evt.srcElement; // extend target property for IE
-  console.log(evt.target);
-};
+// document.onclick = function(evt) {
+//   if (!evt.target) evt.target = evt.srcElement; // extend target property for IE
+//   console.log(evt.target);
+// };
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       powerOn: false,
-      spinning: false,
-      recordOn: false
+      startButtonDepressed: false,
+      recordLoaded: false
     };
   }
 
   handlePowerButtonClicked() {
-    console.log("clicked!");
     this.setState({
       powerOn: !this.state.powerOn
+    });
+  }
+
+  handleStartButtonPressed() {
+    this.setState({
+      startButtonDepressed: !this.state.startButtonDepressed
     });
   }
 
@@ -30,8 +35,11 @@ class App extends Component {
         <div className="interface">
           <div className="tonearm-holder" />
           <Platter />
-          <div className="start-stop" />
           <div className="weight" />
+          <StartStop
+            depressed={this.state.startButtonDepressed}
+            onClick={() => this.handleStartButtonPressed()}
+          />
           <Power
             on={this.state.powerOn}
             onClick={() => this.handlePowerButtonClicked()}
