@@ -2,12 +2,14 @@
   height: 360px;
   width: 453px;
   border: 1px solid black;
+  /* background: black; */
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
+  z-index: -1;
 }
 
 .interface {
@@ -16,16 +18,14 @@
   position: absolute;
 }
 
-
-
 .weight {
-  border: 1px solid black;
-  width: 40px;
-  height: 40px;
+  background: silver;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   position: absolute;
+  margin: 10px;
 }
-
 
 .tonearm-holder {
   border: 1px solid black;
