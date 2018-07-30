@@ -27,11 +27,32 @@ class App extends Component {
     this.setState({
       startButtonDepressed: !this.state.startButtonDepressed
     });
+
+    const audioElement = document.getElementById("audio");
+    audioElement.play();
+  }
+
+  stopTrack() {
+    console.log("stopped");
   }
 
   render() {
     return (
       <div className="technics">
+        <div className="tune">
+          <button data-id_track="1" className="play play-1">
+            Play
+          </button>
+          <audio
+            onEnded={() => this.stopTrack()}
+            id="audio"
+            className="track-1"
+            src="https://s3-us-west-2.amazonaws.com/react-technics/sample1.mp3"
+            controls
+            preload="auto"
+            autobuffer="true"
+          />
+        </div>
         <div className="interface">
           <div className="tonearm-holder" />
           <Platter paused={!this.state.startButtonDepressed} />
