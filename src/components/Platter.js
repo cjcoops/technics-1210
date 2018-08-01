@@ -2,7 +2,7 @@ import React from "react";
 import "./Platter.css";
 
 export function Platter(props) {
-  const className = `vinyl vinyl-1 play ${props.paused ? "paused" : ""}`;
+  const className = `vinyl vinyl-1 play ${props.playing ? "" : "paused"}`;
   return (
     <div className={className}>
       <div className="grooves" />

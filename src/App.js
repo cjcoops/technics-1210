@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Platter, Power, StartStop } from "./components";
+import { Platter, Power, StartStop, Audio } from "./components";
 
 // document.onclick = function(evt) {
 //   if (!evt.target) evt.target = evt.srcElement; // extend target property for IE
@@ -13,7 +13,7 @@ class App extends Component {
     this.state = {
       powerOn: false,
       startButtonDepressed: false,
-      recordLoaded: false
+      recordLoaded: true
     };
   }
 
@@ -27,9 +27,6 @@ class App extends Component {
     this.setState({
       startButtonDepressed: !this.state.startButtonDepressed
     });
-
-    const audioElement = document.getElementById("audio");
-    audioElement.play();
   }
 
   stopTrack() {
@@ -37,25 +34,17 @@ class App extends Component {
   }
 
   render() {
+    const playing =
+      this.state.powerOn &&
+      this.state.recordLoaded &&
+      this.state.startButtonDepressed;
+
     return (
       <div className="technics">
-        <div className="tune">
-          <button data-id_track="1" className="play play-1">
-            Play
-          </button>
-          <audio
-            onEnded={() => this.stopTrack()}
-            id="audio"
-            className="track-1"
-            src="https://s3-us-west-2.amazonaws.com/react-technics/sample1.mp3"
-            controls
-            preload="auto"
-            autobuffer="true"
-          />
-        </div>
+        <Audio onEnded={() => this.stopTrack()} playing={playing} />
         <div className="interface">
           <div className="tonearm-holder" />
-          <Platter paused={!this.state.startButtonDepressed} />
+          <Platter playing={playing} />
           <div className="weight" />
           <StartStop
             depressed={this.state.startButtonDepressed}
