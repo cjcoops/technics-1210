@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Platter, Power, StartStop, Audio } from "./components";
+import { Platter, Power, StartStop, Audio, PitchAdjust } from "./components";
 
 // document.onclick = function(evt) {
 //   if (!evt.target) evt.target = evt.srcElement; // extend target property for IE
@@ -54,7 +54,7 @@ class App extends Component {
             on={this.state.powerOn}
             onClick={() => this.handlePowerButtonClicked()}
           />
-          <div className="pitch-adjust" />
+          <PitchAdjust />
         </div>
       </div>
     );
