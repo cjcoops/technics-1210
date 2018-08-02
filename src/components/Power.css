@@ -1,14 +1,32 @@
 .power {
-  /* border: 1px solid black; */
   width: 25px;
   height: 25px;
   border-radius: 50%;
   position: absolute;
   margin-top: 265px;
-  background: rgb(19, 16, 16);
+  background: rgb(46, 46, 46);
+  cursor: pointer;
+  font-size: 5px;
+  line-height: 5px;
+  color: white;
+
+  display: -ms-flexbox;
+  -ms-flex-pack: center;
+  -ms-flex-align: center;
+
+  /* Firefox */
+  display: -moz-box;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+
+  /* Safari, Opera, and Chrome */
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
 }
 
 .power-on {
   border-color: red;
-  box-shadow: 0 0 20px red;
+  box-shadow: 0 -5px 20px red;
+  transform: rotate(45deg);
 }

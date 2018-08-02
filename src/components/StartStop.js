@@ -2,9 +2,10 @@ import React from "react";
 import "./StartStop.css";
 
 export function StartStop(props) {
+  const className = `start-stop ${props.depressed ? "depressed" : ""}`;
   return (
-    <button className="start-stop" onClick={props.onClick}>
-      {/* {props.depressed ? ">" : "\u25A0"} */}Start \ Stop
-    </button>
+    <div className={className} onClick={props.onClick}>
+      {"Start   Stop"}
+    </div>
   );
 }
