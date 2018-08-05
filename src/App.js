@@ -2,11 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import { Platter, Power, StartStop, Audio, PitchAdjust } from "./components";
 
-// document.onclick = function(evt) {
-//   if (!evt.target) evt.target = evt.srcElement; // extend target property for IE
-//   console.log(evt.target);
-// };
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -30,7 +25,7 @@ class App extends Component {
   }
 
   stopTrack() {
-    console.log("stopped");
+    console.log("Stop track");
   }
 
   render() {
