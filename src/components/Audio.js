@@ -3,10 +3,13 @@ import "./Audio.css";
 
 export function Audio(props) {
   const audioElement = document.getElementById("audio");
-  if (props.playing) {
-    audioElement && audioElement.play();
-  } else {
-    audioElement && audioElement.pause();
+  if (audioElement) {
+    audioElement.playbackRate = 1 + props.pitch / 100;
+    if (props.playing) {
+      audioElement.play();
+    } else {
+      audioElement.pause();
+    }
   }
 
   return (

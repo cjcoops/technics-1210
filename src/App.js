@@ -8,7 +8,8 @@ class App extends Component {
     this.state = {
       powerOn: false,
       startButtonDepressed: false,
-      recordLoaded: true
+      recordLoaded: true,
+      pitch: 0
     };
   }
 
@@ -24,8 +25,12 @@ class App extends Component {
     });
   }
 
-  stopTrack() {
-    console.log("Stop track");
+  stopTrack() {}
+
+  handlePitchChanged(pitch) {
+    this.setState({
+      pitch
+    });
   }
 
   render() {
@@ -36,7 +41,11 @@ class App extends Component {
 
     return (
       <div className="technics">
-        <Audio onEnded={() => this.stopTrack()} playing={playing} />
+        <Audio
+          onEnded={() => this.stopTrack()}
+          playing={playing}
+          pitch={this.state.pitch}
+        />
         <div className="interface">
           <div className="tonearm-holder" />
           <Platter playing={playing} />
@@ -49,7 +58,10 @@ class App extends Component {
             on={this.state.powerOn}
             onClick={() => this.handlePowerButtonClicked()}
           />
-          <PitchAdjust />
+          <PitchAdjust
+            onChange={pitch => this.handlePitchChanged(pitch)}
+            pitch={this.state.pitch}
+          />
         </div>
       </div>
     );
